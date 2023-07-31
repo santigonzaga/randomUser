@@ -18,8 +18,9 @@ class RandomUserViewController: UIViewController {
     }
     
     //MARK: - Init
-    init(viewModel: String) {
-        //self.viewModel = viewModel
+    init(viewModel: RandomUserViewModelProtocol) {
+        self.viewModel = viewModel
+        viewModel.fetchRandomUser()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,7 +29,55 @@ class RandomUserViewController: UIViewController {
     }
     
     //MARK: - Properties
-    //let viewModel:
+    let viewModel: RandomUserViewModelProtocol
+    //weak var coordinator: RandomUserCoordinator
+    
+    private lazy var imageStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 16
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stackView
+    }()
+    
+    private lazy var userImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(systemName: "person.crop.square")
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 8
+        
+        return imageView
+    }()
+    
+    private lazy var labelStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.alignment = .leading
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stackView
+    }()
+    
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Santiaog Gonzaga"
+        label.font = .systemFont(ofSize: 16)
+        label.adjustsFontForContentSizeCategory = true
+        
+        return label
+    }()
+    
+    private lazy var telephoneLabel: UILabel = {
+        let label = UILabel()
+        label.text = "55 51 994824554"
+        label.font = .systemFont(ofSize: 16)
+        label.adjustsFontForContentSizeCategory = true
+        
+        return label
+    }()
     
     // MARK: - UI Setup
     func setupUI() {
@@ -37,12 +86,36 @@ class RandomUserViewController: UIViewController {
         configureConstraints()
     }
     
-    func configureSubViews() {}
+    func configureSubViews() {
+        view.addSubview(imageStackView)
+    }
     
-    func configureStackViews() {}
+    func configureStackViews() {
+        imageStackView.addArrangedSubview(userImageView)
+        imageStackView.addArrangedSubview(labelStackView)
+        labelStackView.addArrangedSubview(nameLabel)
+        labelStackView.addArrangedSubview(telephoneLabel)
+    }
     
-    func configureConstraints() {}
+    func configureConstraints() {
+        let imageStackViewConstraints = [
+            imageStackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16),
+            imageStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            imageStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ]
+        
+        let userImageViewConstraints = [
+            userImageView.heightAnchor.constraint(equalToConstant: 80),
+            userImageView.widthAnchor.constraint(equalToConstant: 80)
+        ]
+        
+        NSLayoutConstraint.activate(imageStackViewConstraints +
+                                    userImageViewConstraints)
+    }
     
     //MARK: - Actions
+    @objc func openMaps() {
+        
+    }
 }
 

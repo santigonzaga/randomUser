@@ -20,6 +20,17 @@
 		DED7BC102A7431A4001EE439 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC0F2A7431A4001EE439 /* WebService.swift */; };
 		DED7BC132A74351B001EE439 /* RandomUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC122A74351B001EE439 /* RandomUserViewModel.swift */; };
 		DED7BC142A74351B001EE439 /* RandomUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC122A74351B001EE439 /* RandomUserViewModel.swift */; };
+		DED7BC162A7716BE001EE439 /* RandomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC152A7716BE001EE439 /* RandomUser.swift */; };
+		DED7BC172A7716BE001EE439 /* RandomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC152A7716BE001EE439 /* RandomUser.swift */; };
+		DED7BC192A77177E001EE439 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC182A77177E001EE439 /* Name.swift */; };
+		DED7BC1A2A77177E001EE439 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC182A77177E001EE439 /* Name.swift */; };
+		DED7BC1C2A771799001EE439 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC1B2A771799001EE439 /* Coordinates.swift */; };
+		DED7BC1D2A771799001EE439 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC1B2A771799001EE439 /* Coordinates.swift */; };
+		DED7BC1F2A7717EB001EE439 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC1E2A7717EB001EE439 /* Picture.swift */; };
+		DED7BC202A7717EB001EE439 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC1E2A7717EB001EE439 /* Picture.swift */; };
+		DED7BC222A7738E6001EE439 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC212A7738E6001EE439 /* Factory.swift */; };
+		DED7BC232A783CAE001EE439 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC0F2A7431A4001EE439 /* WebService.swift */; };
+		DED7BC252A7842C7001EE439 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC242A7842C7001EE439 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +67,12 @@
 		DED7BC0C2A7369A4001EE439 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DED7BC0F2A7431A4001EE439 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		DED7BC122A74351B001EE439 /* RandomUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserViewModel.swift; sourceTree = "<group>"; };
+		DED7BC152A7716BE001EE439 /* RandomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUser.swift; sourceTree = "<group>"; };
+		DED7BC182A77177E001EE439 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		DED7BC1B2A771799001EE439 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		DED7BC1E2A7717EB001EE439 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		DED7BC212A7738E6001EE439 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		DED7BC242A7842C7001EE439 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				DED7BC112A7431C6001EE439 /* SystemDelegates */,
-				DED7BC0E2A743194001EE439 /* Utils */,
+				DED7BC0E2A743194001EE439 /* Utilities */,
 				DED7BC092A736899001EE439 /* Models */,
 				DED7BC082A736884001EE439 /* Resources */,
 				DED7BC072A736874001EE439 /* ViewModels */,
@@ -172,16 +189,22 @@
 		DED7BC092A736899001EE439 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DED7BC152A7716BE001EE439 /* RandomUser.swift */,
+				DED7BC182A77177E001EE439 /* Name.swift */,
+				DED7BC1B2A771799001EE439 /* Coordinates.swift */,
+				DED7BC1E2A7717EB001EE439 /* Picture.swift */,
+				DED7BC242A7842C7001EE439 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DED7BC0E2A743194001EE439 /* Utils */ = {
+		DED7BC0E2A743194001EE439 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				DED7BC0F2A7431A4001EE439 /* WebService.swift */,
+				DED7BC212A7738E6001EE439 /* Factory.swift */,
 			);
-			path = Utils;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		DED7BC112A7431C6001EE439 /* SystemDelegates */ = {
@@ -326,10 +349,16 @@
 				DED7BC102A7431A4001EE439 /* WebService.swift in Sources */,
 				DED7BC0B2A73698B001EE439 /* Coordinator.swift in Sources */,
 				DED7BBDA2A7364BE001EE439 /* RandomUserViewController.swift in Sources */,
+				DED7BC1F2A7717EB001EE439 /* Picture.swift in Sources */,
+				DED7BC162A7716BE001EE439 /* RandomUser.swift in Sources */,
 				DED7BC0D2A7369A4001EE439 /* AppCoordinator.swift in Sources */,
+				DED7BC252A7842C7001EE439 /* Location.swift in Sources */,
 				DED7BC132A74351B001EE439 /* RandomUserViewModel.swift in Sources */,
+				DED7BC192A77177E001EE439 /* Name.swift in Sources */,
+				DED7BC222A7738E6001EE439 /* Factory.swift in Sources */,
 				DED7BBD62A7364BE001EE439 /* AppDelegate.swift in Sources */,
 				DED7BBD82A7364BE001EE439 /* SceneDelegate.swift in Sources */,
+				DED7BC1C2A771799001EE439 /* Coordinates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,8 +366,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED7BC202A7717EB001EE439 /* Picture.swift in Sources */,
 				DED7BC142A74351B001EE439 /* RandomUserViewModel.swift in Sources */,
+				DED7BC232A783CAE001EE439 /* WebService.swift in Sources */,
 				DED7BBED2A7364C1001EE439 /* randomUserTests.swift in Sources */,
+				DED7BC1A2A77177E001EE439 /* Name.swift in Sources */,
+				DED7BC172A7716BE001EE439 /* RandomUser.swift in Sources */,
+				DED7BC1D2A771799001EE439 /* Coordinates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

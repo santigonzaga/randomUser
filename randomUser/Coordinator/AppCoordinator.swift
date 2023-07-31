@@ -15,8 +15,9 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = RandomUserViewController(viewModel: "")
-        window.rootViewController = vc
+        let randomUserVC = Factory.shared.createRandomUserVC()
+        
+        window.rootViewController = randomUserVC
         window.makeKeyAndVisible()
     }
 }
