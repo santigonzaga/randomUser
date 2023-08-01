@@ -15,9 +15,11 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let randomUserVC = Factory.shared.createRandomUserVC()
-        
-        window.rootViewController = randomUserVC
+        let navigationController = UINavigationController()
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        
+        let randomUserCoordinator = RandomUserCoordinator(navigationController: navigationController)
+        coordinate(to: randomUserCoordinator)
     }
 }

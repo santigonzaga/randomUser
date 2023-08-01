@@ -12,19 +12,20 @@ protocol RandomUserViewModelProtocol {
 }
 
 class RandomUserViewModel: RandomUserViewModelProtocol {
+    let webService: WebServiceProtocol
     
-    init() {
-        
+    init(webService: WebServiceProtocol) {
+        self.webService = webService
     }
     
     func fetchRandomUser() {
-        WebService.shared.fetchRandomUser { result in
-            switch result {
-            case .success(let randomUser):
-                print(randomUser)
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        webService.fetchRandomUser { result in
+//            switch result {
+//            case .success(let randomUser):
+//                
+//            case .failure(let error):
+//                
+//            }
+//        }
     }
 }

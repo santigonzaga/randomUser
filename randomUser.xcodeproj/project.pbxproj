@@ -12,7 +12,6 @@
 		DED7BBDA2A7364BE001EE439 /* RandomUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BBD92A7364BE001EE439 /* RandomUserViewController.swift */; };
 		DED7BBDF2A7364C0001EE439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED7BBDE2A7364C0001EE439 /* Assets.xcassets */; };
 		DED7BBE22A7364C0001EE439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED7BBE02A7364C0001EE439 /* LaunchScreen.storyboard */; };
-		DED7BBED2A7364C1001EE439 /* randomUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BBEC2A7364C1001EE439 /* randomUserTests.swift */; };
 		DED7BBF72A7364C1001EE439 /* randomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BBF62A7364C1001EE439 /* randomUserUITests.swift */; };
 		DED7BBF92A7364C1001EE439 /* randomUserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BBF82A7364C1001EE439 /* randomUserUITestsLaunchTests.swift */; };
 		DED7BC0B2A73698B001EE439 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC0A2A73698B001EE439 /* Coordinator.swift */; };
@@ -31,6 +30,15 @@
 		DED7BC222A7738E6001EE439 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC212A7738E6001EE439 /* Factory.swift */; };
 		DED7BC232A783CAE001EE439 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC0F2A7431A4001EE439 /* WebService.swift */; };
 		DED7BC252A7842C7001EE439 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC242A7842C7001EE439 /* Location.swift */; };
+		DED7BC282A78546C001EE439 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DED7BC272A78546C001EE439 /* SDWebImage */; };
+		DED7BC2B2A7854A3001EE439 /* WebServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC2A2A7854A3001EE439 /* WebServiceMock.swift */; };
+		DED7BC2C2A78553D001EE439 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC242A7842C7001EE439 /* Location.swift */; };
+		DED7BC2F2A785647001EE439 /* RandomUserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC2E2A785647001EE439 /* RandomUserViewModelTest.swift */; };
+		DED7BC312A7861FA001EE439 /* RandomUserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC302A7861FA001EE439 /* RandomUserCoordinator.swift */; };
+		DED7BC332A7886D0001EE439 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC322A7886D0001EE439 /* MapsViewController.swift */; };
+		DED7BC352A7886DE001EE439 /* MapsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC342A7886DE001EE439 /* MapsCoordinator.swift */; };
+		DED7BC372A7886EE001EE439 /* MapsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC362A7886EE001EE439 /* MapsViewModel.swift */; };
+		DED7BC382A7886EE001EE439 /* MapsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7BC362A7886EE001EE439 /* MapsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +67,6 @@
 		DED7BBE12A7364C0001EE439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DED7BBE32A7364C0001EE439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED7BBE82A7364C1001EE439 /* randomUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = randomUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DED7BBEC2A7364C1001EE439 /* randomUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomUserTests.swift; sourceTree = "<group>"; };
 		DED7BBF22A7364C1001EE439 /* randomUserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = randomUserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED7BBF62A7364C1001EE439 /* randomUserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomUserUITests.swift; sourceTree = "<group>"; };
 		DED7BBF82A7364C1001EE439 /* randomUserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomUserUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -73,6 +80,12 @@
 		DED7BC1E2A7717EB001EE439 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		DED7BC212A7738E6001EE439 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		DED7BC242A7842C7001EE439 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		DED7BC2A2A7854A3001EE439 /* WebServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceMock.swift; sourceTree = "<group>"; };
+		DED7BC2E2A785647001EE439 /* RandomUserViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserViewModelTest.swift; sourceTree = "<group>"; };
+		DED7BC302A7861FA001EE439 /* RandomUserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserCoordinator.swift; sourceTree = "<group>"; };
+		DED7BC322A7886D0001EE439 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		DED7BC342A7886DE001EE439 /* MapsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsCoordinator.swift; sourceTree = "<group>"; };
+		DED7BC362A7886EE001EE439 /* MapsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED7BC282A78546C001EE439 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +152,8 @@
 		DED7BBEB2A7364C1001EE439 /* randomUserTests */ = {
 			isa = PBXGroup;
 			children = (
-				DED7BBEC2A7364C1001EE439 /* randomUserTests.swift */,
+				DED7BC2D2A78561E001EE439 /* Tests */,
+				DED7BC292A785484001EE439 /* Mocks */,
 			);
 			path = randomUserTests;
 			sourceTree = "<group>";
@@ -157,6 +172,8 @@
 			children = (
 				DED7BC0A2A73698B001EE439 /* Coordinator.swift */,
 				DED7BC0C2A7369A4001EE439 /* AppCoordinator.swift */,
+				DED7BC302A7861FA001EE439 /* RandomUserCoordinator.swift */,
+				DED7BC342A7886DE001EE439 /* MapsCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -165,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				DED7BBD92A7364BE001EE439 /* RandomUserViewController.swift */,
+				DED7BC322A7886D0001EE439 /* MapsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				DED7BC122A74351B001EE439 /* RandomUserViewModel.swift */,
+				DED7BC362A7886EE001EE439 /* MapsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -216,6 +235,22 @@
 			path = SystemDelegates;
 			sourceTree = "<group>";
 		};
+		DED7BC292A785484001EE439 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DED7BC2A2A7854A3001EE439 /* WebServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DED7BC2D2A78561E001EE439 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DED7BC2E2A785647001EE439 /* RandomUserViewModelTest.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +267,9 @@
 			dependencies = (
 			);
 			name = randomUser;
+			packageProductDependencies = (
+				DED7BC272A78546C001EE439 /* SDWebImage */,
+			);
 			productName = randomUser;
 			productReference = DED7BBD22A7364BE001EE439 /* randomUser.app */;
 			productType = "com.apple.product-type.application";
@@ -304,6 +342,9 @@
 				Base,
 			);
 			mainGroup = DED7BBC92A7364BE001EE439;
+			packageReferences = (
+				DED7BC262A78546C001EE439 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = DED7BBD32A7364BE001EE439 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -346,14 +387,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED7BC332A7886D0001EE439 /* MapsViewController.swift in Sources */,
 				DED7BC102A7431A4001EE439 /* WebService.swift in Sources */,
 				DED7BC0B2A73698B001EE439 /* Coordinator.swift in Sources */,
 				DED7BBDA2A7364BE001EE439 /* RandomUserViewController.swift in Sources */,
 				DED7BC1F2A7717EB001EE439 /* Picture.swift in Sources */,
+				DED7BC352A7886DE001EE439 /* MapsCoordinator.swift in Sources */,
 				DED7BC162A7716BE001EE439 /* RandomUser.swift in Sources */,
 				DED7BC0D2A7369A4001EE439 /* AppCoordinator.swift in Sources */,
 				DED7BC252A7842C7001EE439 /* Location.swift in Sources */,
+				DED7BC372A7886EE001EE439 /* MapsViewModel.swift in Sources */,
 				DED7BC132A74351B001EE439 /* RandomUserViewModel.swift in Sources */,
+				DED7BC312A7861FA001EE439 /* RandomUserCoordinator.swift in Sources */,
 				DED7BC192A77177E001EE439 /* Name.swift in Sources */,
 				DED7BC222A7738E6001EE439 /* Factory.swift in Sources */,
 				DED7BBD62A7364BE001EE439 /* AppDelegate.swift in Sources */,
@@ -366,10 +411,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED7BC2F2A785647001EE439 /* RandomUserViewModelTest.swift in Sources */,
+				DED7BC382A7886EE001EE439 /* MapsViewModel.swift in Sources */,
+				DED7BC2B2A7854A3001EE439 /* WebServiceMock.swift in Sources */,
 				DED7BC202A7717EB001EE439 /* Picture.swift in Sources */,
 				DED7BC142A74351B001EE439 /* RandomUserViewModel.swift in Sources */,
 				DED7BC232A783CAE001EE439 /* WebService.swift in Sources */,
-				DED7BBED2A7364C1001EE439 /* randomUserTests.swift in Sources */,
+				DED7BC2C2A78553D001EE439 /* Location.swift in Sources */,
 				DED7BC1A2A77177E001EE439 /* Name.swift in Sources */,
 				DED7BC172A7716BE001EE439 /* RandomUser.swift in Sources */,
 				DED7BC1D2A771799001EE439 /* Coordinates.swift in Sources */,
@@ -698,6 +746,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DED7BC262A78546C001EE439 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DED7BC272A78546C001EE439 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DED7BC262A78546C001EE439 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DED7BBCA2A7364BE001EE439 /* Project object */;
 }
