@@ -19,6 +19,5 @@ class MapsViewModel: MapsViewModelProtocol {
     init(coordinates: Coordinates) {
         self.latitude = Double(coordinates.latitude) ?? 0
         self.longitude = Double(coordinates.longitude) ?? 0
-        print(latitude, longitude)
     }
 }

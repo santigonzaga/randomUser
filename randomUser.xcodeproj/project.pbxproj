@@ -125,6 +125,7 @@
 				DED7BBEB2A7364C1001EE439 /* randomUserTests */,
 				DED7BBF52A7364C1001EE439 /* randomUserUITests */,
 				DED7BBD32A7364BE001EE439 /* Products */,
+				DED7BC472A78C0E9001EE439 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,6 +256,13 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		DED7BC472A78C0E9001EE439 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,6 +299,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				DED7BC462A78C051001EE439 /* PBXTargetDependency */,
+				DED7BC442A78C04E001EE439 /* PBXTargetDependency */,
+				DED7BC422A78C03F001EE439 /* PBXTargetDependency */,
 				DED7BBEA2A7364C1001EE439 /* PBXTargetDependency */,
 			);
 			name = randomUserTests;
@@ -452,6 +463,18 @@
 			isa = PBXTargetDependency;
 			target = DED7BBD12A7364BE001EE439 /* randomUser */;
 			targetProxy = DED7BBF32A7364C1001EE439 /* PBXContainerItemProxy */;
+		};
+		DED7BC422A78C03F001EE439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DED7BC412A78C03F001EE439 /* RxCocoa */;
+		};
+		DED7BC442A78C04E001EE439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DED7BC432A78C04E001EE439 /* RxSwift */;
+		};
+		DED7BC462A78C051001EE439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DED7BC452A78C051001EE439 /* RxTest */;
 		};
 /* End PBXTargetDependency section */
 
@@ -767,7 +790,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 6.0.0;
 			};
 		};
@@ -788,6 +811,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DED7BC392A789509001EE439 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		DED7BC412A78C03F001EE439 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DED7BC392A789509001EE439 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		DED7BC432A78C04E001EE439 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DED7BC392A789509001EE439 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		DED7BC452A78C051001EE439 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DED7BC392A789509001EE439 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
