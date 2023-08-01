@@ -18,8 +18,8 @@ class Factory {
         return randomUserVC
     }
     
-    func createMapsVC() -> MapsViewController {
-        let viewModel = MapsViewModel()
+    func createMapsVC(coordinates: Coordinates) -> MapsViewController {
+        let viewModel = MapsViewModel(coordinates: coordinates)
         let mapsVC = MapsViewController(viewModel: viewModel)
         
         return mapsVC

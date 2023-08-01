@@ -7,6 +7,8 @@
 
 import UIKit
 import SDWebImage
+import RxSwift
+import RxCocoa
 
 class RandomUserViewController: UIViewController {
     
@@ -14,8 +16,7 @@ class RandomUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        
-        view.backgroundColor = .white
+        self.setBindings()
     }
     
     //MARK: - Init
@@ -33,6 +34,7 @@ class RandomUserViewController: UIViewController {
     //MARK: - Properties
     let viewModel: RandomUserViewModelProtocol
     var coordinator: RandomUserCoordinator?
+    private let disposeBag = DisposeBag()
     
     private lazy var userStackView: UIStackView = {
         let stackView = UIStackView()
@@ -47,7 +49,6 @@ class RandomUserViewController: UIViewController {
     private lazy var userImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(systemName: "person.crop.square")
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 8
         
@@ -56,7 +57,6 @@ class RandomUserViewController: UIViewController {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Santiaog Gonzaga"
         label.textColor = .black
         label.font = .systemFont(ofSize: 20)
         label.adjustsFontForContentSizeCategory = true
@@ -66,7 +66,6 @@ class RandomUserViewController: UIViewController {
     
     private lazy var telephoneLabel: UILabel = {
         let label = UILabel()
-        label.text = "55 51 994824554"
         label.textColor = .black
         label.font = .systemFont(ofSize: 16)
         label.adjustsFontForContentSizeCategory = true
@@ -76,7 +75,6 @@ class RandomUserViewController: UIViewController {
     
     private lazy var locationButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Porto Alegre, RS - Brazil", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.addTarget(self, action: #selector(openMaps), for: .touchUpInside)
         
@@ -90,10 +88,16 @@ class RandomUserViewController: UIViewController {
         button.backgroundColor = .blue
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(fetchButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
+    }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.hidesWhenStopped = true
+        return indicator
     }()
     
     // MARK: - UI Setup
@@ -101,11 +105,14 @@ class RandomUserViewController: UIViewController {
         configureSubViews()
         configureStackViews()
         configureConstraints()
+        
+        view.backgroundColor = .white
     }
     
     func configureSubViews() {
         view.addSubview(userStackView)
         view.addSubview(fetchButton)
+        view.addSubview(activityIndicator)
     }
     
     func configureStackViews() {
@@ -135,18 +142,71 @@ class RandomUserViewController: UIViewController {
             fetchButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -48)
         ]
         
+        let activityIndicatorConstraints = [
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ]
+        
         NSLayoutConstraint.activate(userStackViewConstraints +
                                     userImageViewConstraints +
-                                    fetchButtonConstraints)
+                                    fetchButtonConstraints +
+                                    activityIndicatorConstraints)
+    }
+    
+    func setBindings() {
+        viewModel.randomUser
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] user in
+                self?.updateUI(with: user)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.isLoading
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] isLoading in
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                    self?.userStackView.isHidden = true
+                    self?.fetchButton.isEnabled = false
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                    self?.userStackView.isHidden = false
+                    self?.fetchButton.isEnabled = true
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        fetchButton.rx.tap
+            .bind(onNext: { [weak self] in
+                self?.viewModel.fetchRandomUser()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func updateUI(with user: RandomUser?) {
+        if let user = user {
+            nameLabel.text = "\(user.name.title) \(user.name.first) \(user.name.last)"
+            locationButton.setTitle("\(user.location.city), \(user.location.state) - \(user.location.country)", for: .normal)
+            telephoneLabel.text = user.cell
+            
+            if let imageURL = URL(string: user.picture.medium) {
+                userImageView.sd_setImage(with: imageURL,
+                                          placeholderImage: UIImage(systemName: "person.crop.square"))
+            }
+        }
     }
     
     //MARK: - Actions
     @objc func openMaps() {
-        coordinator?.coordinateToMaps()
-    }
-    
-    @objc func fetchButtonTapped() {
-        print("Not implement yet")
+        viewModel.randomUser
+            .take(1)
+            .subscribe(onNext: { [weak self] randomUser in
+                guard let coordinates = randomUser?.location.coordinates else {
+                    return
+                }
+                self?.coordinator?.coordinateToMaps(coordinates: coordinates)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

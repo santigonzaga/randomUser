@@ -49,21 +49,23 @@ class MapsViewController: UIViewController {
     func setupUI() {
         configureSubViews()
         configureConstraints()
-    }
-    
-    func configureSubViews() {
-        view.addSubview(mapView)
         
-        let initialCoordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
+        navigationItem.rightBarButtonItem = closeButton
+        view.backgroundColor = .white
+        title = "\(viewModel.latitude), \(viewModel.longitude)"
+        
+        let initialCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(viewModel.latitude),
+                                                       longitude: CLLocationDegrees(viewModel.longitude))
         let region = MKCoordinateRegion(center: initialCoordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapView.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = initialCoordinate
         mapView.addAnnotation(annotation)
-        
-        navigationItem.rightBarButtonItem = closeButton
-        view.backgroundColor = .white
+    }
+    
+    func configureSubViews() {
+        view.addSubview(mapView)
     }
     
     func configureConstraints() {

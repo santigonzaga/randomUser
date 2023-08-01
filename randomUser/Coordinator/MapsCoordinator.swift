@@ -13,13 +13,16 @@ protocol MapsFlow: AnyObject {
 
 class MapsCoordinator: Coordinator, MapsFlow {
     weak var navigationController: UINavigationController?
+    var coordinates: Coordinates
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController,
+         coordinates: Coordinates) {
         self.navigationController = navigationController
+        self.coordinates = coordinates
     }
     
     func start() {
-        let mapsVC = Factory.shared.createMapsVC()
+        let mapsVC = Factory.shared.createMapsVC(coordinates: coordinates)
         mapsVC.coordinator = self
         
         let navVc = UINavigationController(rootViewController: mapsVC)

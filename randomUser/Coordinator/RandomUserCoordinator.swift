@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RandomUserFlow: AnyObject {
-    func coordinateToMaps()
+    func coordinateToMaps(coordinates: Coordinates)
 }
 
 class RandomUserCoordinator: Coordinator, RandomUserFlow {
@@ -26,8 +26,9 @@ class RandomUserCoordinator: Coordinator, RandomUserFlow {
     }
     
     // MARK: - Flow Methods
-    func coordinateToMaps() {
-        let mapsCoordinator = MapsCoordinator(navigationController: navigationController)
+    func coordinateToMaps(coordinates: Coordinates) {
+        let mapsCoordinator = MapsCoordinator(navigationController: navigationController,
+                                              coordinates: coordinates)
         coordinate(to: mapsCoordinator)
     }
 }

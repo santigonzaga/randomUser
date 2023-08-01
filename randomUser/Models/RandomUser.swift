@@ -14,5 +14,6 @@ struct RandomUserResponse: Codable {
 struct RandomUser: Codable {
     let name: Name
     let location: Location
+    let cell: String
     let picture: Picture
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 struct Picture: Codable {
-    let medium: URL
+    let medium: String
 }

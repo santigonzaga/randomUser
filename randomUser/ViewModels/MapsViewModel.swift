@@ -8,12 +8,17 @@
 import Foundation
 
 protocol MapsViewModelProtocol {
-    
+    var latitude: Double { get }
+    var longitude: Double { get }
 }
 
 class MapsViewModel: MapsViewModelProtocol {
+    let latitude: Double
+    let longitude: Double
     
-    init() {
-        
+    init(coordinates: Coordinates) {
+        self.latitude = Double(coordinates.latitude) ?? 0
+        self.longitude = Double(coordinates.longitude) ?? 0
+        print(latitude, longitude)
     }
 }
